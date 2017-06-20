@@ -27,7 +27,7 @@ namespace Vidly.Controllers
         }
 
         // GET: Movies/Random
-        public ActionResult Random()
+        /*public ActionResult Random()
         {
             var movie = new Movie() {Name = "Shrek"};
 
@@ -44,6 +44,6 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
-        }
+        }*/
     }
 }
