@@ -67,5 +67,11 @@ namespace Vidly.Controllers
 
             return View(viewModel);
         }*/
+
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+            return View();
+        }
     }
 }
