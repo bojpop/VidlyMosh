@@ -23,12 +23,17 @@ namespace Vidly.Models
         public DateTime? DateAdded { get; set; }
         
         [Display(Name = "Number in stock")]
+<<<<<<< HEAD
         [Required]
         [Range(1,20)]
+=======
+        [Range(1, 20)]
+>>>>>>> origin/master
         public int NumberInStock { get; set; }
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        [Required]
         public Genre Genre { get; set; }
     }
 }
