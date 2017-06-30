@@ -230,6 +230,14 @@
     <Compile Include="Migrations\201706292214490_AntyForgeryMovie.Designer.cs">
       <DependentUpon>201706292214490_AntyForgeryMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706301217104_RemoveGenreAnnotation.cs" />
+    <Compile Include="Migrations\201706301217104_RemoveGenreAnnotation.Designer.cs">
+      <DependentUpon>201706301217104_RemoveGenreAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706301218551_RemoveGenreAnnotation1.cs" />
+    <Compile Include="Migrations\201706301218551_RemoveGenreAnnotation1.Designer.cs">
+      <DependentUpon>201706301218551_RemoveGenreAnnotation1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -380,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706292214490_AntyForgeryMovie.resx">
       <DependentUpon>201706292214490_AntyForgeryMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706301217104_RemoveGenreAnnotation.resx">
+      <DependentUpon>201706301217104_RemoveGenreAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706301218551_RemoveGenreAnnotation1.resx">
+      <DependentUpon>201706301218551_RemoveGenreAnnotation1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

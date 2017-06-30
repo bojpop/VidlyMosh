@@ -27,10 +27,11 @@ namespace Vidly.Models
         [Required]
         [Range(1,20)]
         public int NumberInStock { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        [Required]
+
         public Genre Genre { get; set; }
     }
 }
