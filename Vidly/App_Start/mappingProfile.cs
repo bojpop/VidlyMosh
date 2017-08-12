@@ -8,12 +8,15 @@ using Vidly.Models;
 
 namespace Vidly.App_Start
 {
-    public class mappingProfile : Profile
+    public class MappingProfile : Profile
     {
-        public mappingProfile()
+        public MappingProfile()
         {
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<CustomerDto, Customer>();
+
+            Mapper.CreateMap<Movie, MovieDto>();
+            Mapper.CreateMap<MovieDto, Movie>();
         }
     }
 }
