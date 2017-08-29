@@ -6,13 +6,9 @@
 }
 
 <h2>Customers</h2>
-@*@if (!Model.Any())
-{
-    <p>No customers yet</p>
-}
-else
-{*@
+
 <input type="button" class="btn btn-info" value="New customer" onclick="location.href = '@Url.Action("New", "Customer")'"/><br/><br />
+
 <table id="customers" class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -22,16 +18,6 @@ else
     </tr>
     </thead>
     <tbody>
-    @*@foreach (var customer in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(customer.Name, "Edit", "Customer", new {id = customer.Id}, null)</td>
-                <td>@customer.MembershipType.Name</td>
-                <td>
-                    <button data-customers-id="@customer.Id" class="btn-link js-delete">Delete</button>
-                </td>
-            </tr>
-        }*@
     </tbody>
 </table>
 
@@ -40,7 +26,7 @@ else
 {
     <script>
         $(document).ready(function() {
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -49,11 +35,11 @@ else
                     {
                         data: "name",
                         render: function(data, type, customer) {
-                            return "<a href='/customer/edit/" + customer.ID + "'>" + customer.name + "</a>";
+                            return "<a href='/customer/edit/" + customer.id + "'>" + data + "</a>";
                         }
                     },
                     {
-                        data: "name"
+                        data: "membershipType.name"
                     },
                     {
                         data: "id",
@@ -70,10 +56,10 @@ else
                 bootbox.confirm("Are you shure you want to delete this customer?", function(result) {
                     if (result) {
                         $.ajax({
-                            url: "/api/customers/" + button.attr("data-customers-id"),
+                            url: "/api/customers/" + button.attr("data-customer-id"),
                             method: "DELETE",
                             success: function() {
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();
                             }
                         });
                     }
